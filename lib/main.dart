@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 
       ),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: "Islami",
       initialRoute: SplashScreen.routeName,
       routes: {
         SplashScreen.routeName : (_)=> SplashScreen(),
