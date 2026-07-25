@@ -1,7 +1,8 @@
+import 'dart:async';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_c19_online/core/theme/app_colors.dart';
-import 'package:islamic_c19_online/modules/layout/screens/layout_screen.dart';
+import 'intro_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String routeName = "/";
@@ -14,15 +15,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 5,), () {
-      Navigator.pushNamedAndRemoveUntil(
+    super.initState();
+    Timer(const Duration(seconds: 6), () {
+      Navigator.pushReplacement(
         context,
-        LayoutScreen.routeName,
-        (route) => false,
+        MaterialPageRoute(builder: (context) => const IntroScreen()),
       );
     });
-
-    super.initState();
   }
 
   @override
@@ -35,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Expanded(
               child: ZoomIn(
-                duration: Duration(seconds: 2),
+                duration: Duration(seconds: 4),
                 child: Center(
                   child: Image.asset("assets/logo/app_logo.png", width: 185),
                 ),
@@ -43,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
 
             FadeInUp(
-              delay: Duration(seconds: 2),
+              delay: Duration(seconds: 4),
               child: Image.asset("assets/logo/route_logo.png", width: 244),
             ),
           ],
